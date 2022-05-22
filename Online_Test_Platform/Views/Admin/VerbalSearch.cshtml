@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Online_Test_Platform.Models.TestReport>
+
+@{
+    ViewData["Title"] = "VerbalSearch";
+}
+<div class="center">
+<h1>Verbal Test Record</h1>
+</div>
+<div class="center">
+<h4>@ViewBag.Message</h4>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.TestId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marks)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.TotalMarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestDate)
+            </th>           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          @*  <td>
+                @Html.DisplayFor(modelItem => item.TestId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.TotalMarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDate)
+            </td>          
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a  class="btn btn-primary"asp-action="VerbalTestReport" asp-controller="Admin"> Back</a>
+</div>
+
+<style>
+        body {
+            background-image:
+            url("/Image/Admin.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>  
+    
+<style>
+.center {
+ justify-content: center;
+}
+</style>

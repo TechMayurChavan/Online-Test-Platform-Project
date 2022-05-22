@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Online_Test_Platform.Models.TestReport>
+
+@{
+    ViewData["Title"] = "ReasoningMarks";
+}
+<div class="center">
+<h1>Reasoning Marks</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.TestId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marks)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.TotalMarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.TestId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.TotalMarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDate)
+            </td>
+             <td>              
+                @Html.ActionLink("Details", "MarksDetailsReasoning","DetailMarks",new {  id=item.TestDate }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-action="CategoryMarks">Back</a>
+</div>
+
+    <style>
+        body {
+            background-image:
+            url("/Image/MarksNew.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    
+<style>
+.center {
+ justify-content: center;
+}
+</style>
